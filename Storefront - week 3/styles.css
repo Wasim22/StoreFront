@@ -11,3 +11,9 @@
 #login {
     float: right;
 }
+
+#welcome {
+    padding: 20px;
+    align-content: center;
+    color: white;
+}

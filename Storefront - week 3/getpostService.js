@@ -61,4 +61,5 @@ var getUpdatedInventory = function () {
     };
     // .send() the request
     request.send();
+
 };

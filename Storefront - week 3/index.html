@@ -3,8 +3,9 @@
 <head>
     <title></title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
 </head>
-<body onload="newLaptop();">
+<body onload="getUpdatedInventory();">
     <div class="container">
         <!--navbar-->
         <div class="row clearfix">
@@ -14,12 +15,12 @@
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                         
                         <!-- Button trigger modal -->
-                        <button class="navbar-brand" data-toggle="modal" data-target="#signupModal" onclick="signup();">
+                        <button class="navbar-brand" data-toggle="modal" data-target="#myModal" onclick="signup();">
                             Sign Up
                         </button>
 
                         <!-- Modal -->
-                        "<div class='modal fade' id='signupModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
+                        "<div class='modal fade' id='myModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
                             <div class='modal-dialog'>
                                 <div class='modal-content'>
                                     <div class='modal-header'>
@@ -80,10 +81,12 @@
                         </form>
                         <!--right side of the navbar-->
                         <ul class="nav navbar-nav navbar-right">
+                            <li class="active" id="welcome">
+                                
+                            </li>
                             <li>
-                                <!-- Button trigger modal 2-->
-                                <button class="navbar-brand" data-toggle="modal" data-target="#myModal" id='login();'>
-                                    <!--<span id='loginlogout' onclick='login();'>Log In</span>-->
+                                <!-- Log in modal -->
+                                <button class="navbar-brand" data-toggle="modal" data-target="#myModal" onclick='login();' id='loginlogout'>
                                     Log In
                                 </button>
                             </li>
@@ -142,7 +145,8 @@
                                 </p>
                             </div>
                         </div>
-                    </div> <a class="left carousel-control" href="#carousel-624614" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-624614" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div> <!--<a class="left carousel-control" href="#carousel-624614" data-slide="prev" onclick="displayInfo();"><span class="glyphicon glyphicon-chevron-left"></span></a>-->
+                    <a class="right carousel-control" href="#carousel-624614" data-slide="next" onclick="displayInfo();"><span class=" glyphicon glyphicon-chevron-right"></span></a>
                 </div>
             </div>
         </div>
@@ -150,8 +154,8 @@
         <div class="row clearfix">
             <div class="col-md-12 column">
                 <div class="page-header">
-                    <h1>
-                        Example page header <small>Subtext for header</small>
+                    <h1 id="header">
+                        
                     </h1>
                 </div>
                 <div class="row clearfix">
@@ -207,12 +211,6 @@
                     </li>
                     <li>
                         <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
                     </li>
                     <li>
                         <a href="#">Next</a>

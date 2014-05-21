@@ -1,4 +1,4 @@
-﻿// https://wasim-storefront.firebaseio.com/
+// https://wasim-storefront.firebaseio.com/
 
 var myApp  = function() {
     
@@ -38,8 +38,19 @@ var InventoryCunstructor = function(name, desc, img, price) {
 //    postUpdatedInventory();
 //};
 
+var displayCounter = 0;
 
-
+var displayInfo = function () {
+    var inventoryArray = {};
+    for (var propName in localStorage) {
+        //var item = JSON.parse(localStorage[propName]);
+        if (propName !== "username" && propName !== "password") {
+            inventoryArray.push(propName);
+        }
+    }
+    displayCounter++;
+    $$('header').innerHTML = inventoryArray[displayCounter].name + " <small>"+ inventoryArray[displayCounter].desc +"</small>";
+};
 
 
 
@@ -91,13 +102,15 @@ var verify = function () {
         $$("modal-body").innerHTML = "Thank you for logging in.<br /><br />";
         $$("loginlogout").innerHTML = "Log Out";
         $$("loginlogout").setAttribute("onclick", "logout();");
+        user = user[0].toUpperCase() + user.substring(1);
+        $$("welcome").innerHTML = "Welcome, " + user + "!";
+        $$("welcome").style.color = "white";
     } else {
         $$("modal-body").innerHTML += "Login failed. Please try again.";
     }
 }
 
 var logout = function () {
-    // reset username and password to ""
     $$("loginlogout").innerHTML = "Log In";
     $$("loginlogout").setAttribute("onclick", "login();");
     $$("modal-body").innerHTML = "You have successfully logged out.<br /><br />";
