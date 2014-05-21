@@ -1,0 +1,13 @@
+﻿.carousel-caption {
+    text-align: right;
+}
+
+.modal-body {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+#login {
+    float: right;
+}
